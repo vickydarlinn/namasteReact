@@ -1,0 +1,151 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Roboto Slab", serif;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  background-color: #bfbfc4;
+
+  /* background-color: rgb(25, 24, 24); */
+  color: rgb(80, 77, 77);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #131337;
+}
+.App {
+  border: 1px solid red;
+  max-width: 1440px;
+}
+/* developers */
+.developers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+/* developer card */
+.developer_card {
+  position: relative;
+}
+.developer_card_top {
+  background-color: #f7f7f7;
+  max-width: 45rem;
+  display: flex;
+  /* box-shadow: 20px 20px 0px 0px #6a6a6d; */
+  box-shadow: 10px 10px 30px -20px rgb(0, 0, 0);
+  border-radius: 5px;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.developer_details {
+  width: 50%;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.developer_photo {
+  width: 50%;
+}
+.developer_photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.line {
+  display: inline-block;
+  border: 1.5px solid black;
+  width: 30%;
+  margin: auto 0;
+  align-self: flex-start;
+}
+.developer_name {
+  margin: 2rem 0 0.5rem 0;
+  font-size: 2.4rem;
+}
+.developer_designation {
+  font-size: 1.4rem;
+}
+.developer_portfolio {
+  margin: 1rem 0 1.5rem 0;
+}
+.developer_card_bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  height: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: 0.5s ease;
+}
+.developer_card_bottom p {
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+  margin: auto;
+}
+.developer_social_links {
+  font-size: 3.6rem;
+  margin-top: auto;
+  display: flex;
+  border: 1px solid red;
+  width: 100%;
+  justify-content: space-around;
+  padding: 1rem;
+}
+.developer_social_links a {
+  color: white;
+}
+.developer_card:hover .developer_card_bottom {
+  height: 100%;
+}
+footer,
+header {
+  border: 1px solid green;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .developer_card_top {
+    flex-direction: column-reverse;
+    height: initial;
+    width: 100%;
+    box-shadow: none;
+  }
+  .developer_details {
+    width: 100%;
+  }
+  .developer_photo {
+    width: 100%;
+  }
+  .line {
+    display: none;
+  }
+}
