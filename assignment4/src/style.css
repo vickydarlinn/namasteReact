@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+
+:root {
+  --bg_color: #22252d;
+  --card_bg_color: #1a1b22;
+  --main_heading_color: #ffffff;
+  --desination_color: #f3bf99;
+  --website_color: #f5f5f5;
+  --para_color: #dcdcdc;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  background-color: var(--bg_color);
+
+  color: var(--para_color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--main_heading_color);
+}
+.App {
+  max-width: 1440px;
+}
+/* header css */
+.header {
+  margin: 3rem 1rem;
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card_bg_color);
+
+  border-radius: 50px;
+}
+.searchBar input {
+  border-radius: 20px;
+  border: 1px solid var(--bg_color);
+  padding: 1.8rem 2rem;
+  width: 30vw;
+  font-size: 1.6rem;
+}
+.searchBar input:focus {
+  outline: 1.5px solid var(--card_bg_color);
+  color: var(--bg_color);
+}
+.userIcon {
+  font-size: 5rem;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.logo {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .searchBar {
+    display: none;
+  }
+}
+/* body css------------------- */
+/* developers */
+.developers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+/* developer card */
+.developer_card {
+  position: relative;
+  color: rgb(80, 77, 77);
+}
+.developer_card_top {
+  background-color: var(--card_bg_color);
+
+  max-width: 45rem;
+  display: flex;
+  box-shadow: 10px 10px 30px -20px rgb(0, 0, 0);
+  border-radius: 5px;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.developer_details {
+  width: 50%;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.developer_photo {
+  width: 50%;
+}
+.developer_photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.line {
+  display: inline-block;
+  border: 1.5px solid white;
+  width: 30%;
+  margin: auto 0;
+  align-self: flex-start;
+}
+.developer_name {
+  margin: 2rem 0 0.5rem 0;
+  font-size: 2.4rem;
+}
+.developer_designation {
+  color: var(--desination_color);
+  font-size: 1.4rem;
+}
+.developer_portfolio {
+  margin: 1rem 0 1.5rem 0;
+  color: var(--website_color);
+}
+.developer_card_bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  height: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: 0.5s ease;
+}
+.developer_card_bottom p {
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+  margin: auto;
+}
+.developer_social_links {
+  font-size: 3.6rem;
+  margin-top: auto;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 1rem;
+}
+.developer_social_links a {
+  color: var(--para_color);
+}
+.developer_social_links a:hover {
+  color: white;
+}
+.developer_card:hover .developer_card_bottom {
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .developer_card_top {
+    flex-direction: column-reverse;
+    height: initial;
+    width: 100%;
+    box-shadow: none;
+  }
+  .developer_details {
+    width: 100%;
+  }
+  .developer_photo {
+    width: 100%;
+  }
+  .line {
+    display: none;
+  }
+}
+
+/* footer css */
+footer {
+  margin: 3rem 1rem;
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer a {
+  color: var(--desination_color);
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
