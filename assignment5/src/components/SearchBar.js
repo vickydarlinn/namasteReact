@@ -22,6 +22,7 @@ const SearchBar = (props) => {
         onChange={getSearchedQuery}
         type="text"
         placeholder="What are you looking for?"
+        value={query}
       />
     </div>
   );
