@@ -1,1 +1,1 @@
-export const teamName = "Strom Troopers";
+export const teamName = "Storm Troopers";
