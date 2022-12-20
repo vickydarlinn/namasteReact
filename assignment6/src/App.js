@@ -28,7 +28,6 @@ const App = () => {
     }
     setAllDevelopersData(developerArr);
   }
-  //testing
 
   return (
     <div className="app">

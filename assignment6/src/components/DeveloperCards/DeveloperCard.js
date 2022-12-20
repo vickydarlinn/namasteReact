@@ -1,6 +1,5 @@
 import React from "react";
-import { FaGithub, FaBuilding } from "react-icons/fa";
-import { BsTwitter } from "react-icons/bs";
+import { FaBuilding } from "react-icons/fa";
 import { GrLocation } from "react-icons/gr";
 
 const DeveloperCard = (props) => {
