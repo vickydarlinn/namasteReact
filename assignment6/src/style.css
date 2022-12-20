@@ -152,6 +152,14 @@ header {
   color: var(--purple);
   border-bottom: 1px solid var(--purple);
 }
+.pageNotFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-size: 3rem;
+  font-weight: 600;
+}
 /* footer */
 footer {
   display: flex;

@@ -12,7 +12,6 @@ const DeveloperCard = (props) => {
     html_url: githuLink,
     twitter_username: twitterLink,
   } = props.developerData;
-  console.log(location);
   return (
     <div className="developer_card">
       <div className="developer_photo">
@@ -20,7 +19,7 @@ const DeveloperCard = (props) => {
       </div>
       <div className="developer_info">
         <div className="devleloper_deatils">
-          <p className="developer_name">{name ? name : "john"}</p>
+          <p className="developer_name">{name ? name : "john doe"}</p>
           <p className="developer_company">
             {<FaBuilding />} {company ? company : "not found"}
           </p>

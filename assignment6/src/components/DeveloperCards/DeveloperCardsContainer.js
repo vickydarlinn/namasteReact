@@ -1,12 +1,11 @@
 import React from "react";
 import DeveloperCard from "./DeveloperCard";
 
-const DeveloperCardsContainer = ({ allDevelopersData }) => {
-  console.log(allDevelopersData);
+const DeveloperCardsContainer = ({ developersData }) => {
   return (
     <div className="developer_cards_container">
-      {allDevelopersData.map((developer) => (
-        <DeveloperCard developerData={developer} />
+      {developersData.map((developer) => (
+        <DeveloperCard key={developer.id} developerData={developer} />
       ))}
     </div>
   );

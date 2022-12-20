@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Search from "./components/Search";
+import PageNotFound from "./components/DeveloperCards/PageNotFound";
 import DeveloperCardsContainer from "./components/DeveloperCards/DeveloperCardsContainer";
 import Footer from "./components/Footer";
 import data from "./utils/data/data.json";
 
 const App = () => {
   const [allDevelopersData, setAllDevelopersData] = useState([]);
+  const [filteredDeveloperData, setFilteredDeveloperData] = useState([]);
+  const [isSearched, setIsSearched] = useState(false);
 
+  //
   useEffect(() => {
     getDevelopers();
   }, []);
@@ -22,15 +26,29 @@ const App = () => {
       const developerData = await developerDataResp.json();
       developerArr.push(developerData);
     }
-    // console.log(developerArr);
     setAllDevelopersData(developerArr);
   }
+  //testing
 
   return (
     <div className="app">
       <Header />
-      <Search />
-      <DeveloperCardsContainer allDevelopersData={allDevelopersData} />
+      <Search
+        data={allDevelopersData}
+        setFilteredDeveloperData={setFilteredDeveloperData}
+        setIsSearched={setIsSearched}
+      />
+
+      {isSearched ? (
+        filteredDeveloperData.length ? (
+          <DeveloperCardsContainer developersData={filteredDeveloperData} />
+        ) : (
+          <PageNotFound />
+        )
+      ) : (
+        <DeveloperCardsContainer developersData={allDevelopersData} />
+      )}
+
       <Footer />
     </div>
   );
