@@ -5,6 +5,9 @@ import PageNotFound from "./components/DeveloperCards/PageNotFound";
 import DeveloperCardsContainer from "./components/DeveloperCards/DeveloperCardsContainer";
 import Footer from "./components/Footer";
 import data from "./utils/data/data.json";
+import { Route, Routes } from "react-router-dom";
+import DeveloperDetails from "./components/DeveloperCards/DeveloperDetails";
+import FollowUp from "./components/DeveloperCards/FollowUp";
 
 const App = () => {
   const [allDevelopersData, setAllDevelopersData] = useState([]);
@@ -28,26 +31,37 @@ const App = () => {
     }
     setAllDevelopersData(developerArr);
   }
+  const HomePage = function () {
+    return (
+      <>
+        <Search
+          data={allDevelopersData}
+          setFilteredDeveloperData={setFilteredDeveloperData}
+          setIsSearched={setIsSearched}
+        />
+
+        {isSearched ? (
+          filteredDeveloperData.length ? (
+            <DeveloperCardsContainer developersData={filteredDeveloperData} />
+          ) : (
+            <PageNotFound />
+          )
+        ) : (
+          <DeveloperCardsContainer developersData={allDevelopersData} />
+        )}
+      </>
+    );
+  };
 
   return (
     <div className="app">
       <Header />
-      <Search
-        data={allDevelopersData}
-        setFilteredDeveloperData={setFilteredDeveloperData}
-        setIsSearched={setIsSearched}
-      />
-
-      {isSearched ? (
-        filteredDeveloperData.length ? (
-          <DeveloperCardsContainer developersData={filteredDeveloperData} />
-        ) : (
-          <PageNotFound />
-        )
-      ) : (
-        <DeveloperCardsContainer developersData={allDevelopersData} />
-      )}
-
+      {/* <HomePage /> */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="user/:github" element={<DeveloperDetails />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
       <Footer />
     </div>
   );

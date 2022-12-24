@@ -26,9 +26,12 @@ body {
   color: var(--light-mode-text);
   font-family: var(--body-font);
   font-size: 1.8rem;
+  position: relative;
+  min-height: 100vh;
 }
 .app {
   max-width: 1440px;
+  margin: auto;
 }
 img {
   display: block;
@@ -160,8 +163,137 @@ header {
   font-size: 3rem;
   font-weight: 600;
 }
+
+/* Member Details page */
+.member_details {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  /* align-items: center; */
+  /* border: 1px solid red; */
+  padding: 20px;
+}
+.member_image {
+  max-width: 350px;
+}
+.member_image img {
+  width: 100%;
+  border-radius: 50%;
+  outline: 7px solid var(--dark-mode-bg);
+  outline-offset: 1px;
+}
+.member_info {
+  /* border: 1px solid green; */
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.member_profile {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid purple; */
+  gap: 1rem;
+  width: 100%;
+}
+.member_profile .memeber_username {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-right: auto;
+}
+.member_profile a {
+  font-size: 2.4rem;
+  color: var(--light-mode-background);
+  background-color: var(--light-mode-text);
+  border: 1px solid var(--light-mode-text);
+  margin: auto 1px;
+  border-radius: 15px;
+  padding: 1 3rem;
+}
+
+.member_follows {
+  /* border: 1px solid green; */
+  width: 70%;
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+.member_follows p {
+  margin: auto;
+  font-weight: 600;
+  cursor: pointer;
+}
+.member_name {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.follows_container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 500px;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.follow_up {
+  background-color: var(--light-mode-text);
+  color: var(--light-mode-background);
+  position: relative;
+  padding: 1rem;
+}
+.follow_up_header {
+  height: 5rem;
+  position: sticky;
+  left: 0;
+  top: 0;
+  background-color: var(--light-mode-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.fellow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1.3rem;
+}
+.fellow_details {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.fellow_details img {
+  width: 40px;
+  border-radius: 50%;
+  height: auto;
+}
+.fellow a {
+  color: var(--light-mode-text);
+  background-color: var(--light-mode-background);
+  border-radius: 10px;
+  padding: 0.5rem 3rem;
+  font-weight: 700;
+}
+
 /* footer */
 footer {
+  width: 100%;
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
