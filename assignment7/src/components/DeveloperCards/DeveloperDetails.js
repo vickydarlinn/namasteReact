@@ -71,11 +71,16 @@ const DeveloperDetails = () => {
           <div>
             <div className="member_more_details">
               <div className="member_name">{name}</div>
-              <div className="member_bio">{bio}</div>
+              <div className="member_bio">
+                {bio
+                  ? bio
+                  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"}
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       {isFollowerClicked ? (
         <FollowUp url={followers_url} closeModal={setIsFollowerClicked} />
       ) : null}
@@ -85,6 +90,17 @@ const DeveloperDetails = () => {
           closeModal={setIsFollowingClicked}
         />
       ) : null}
+      {/* ///// */}
+      <div className="stats">
+        <img
+          src={`https://github-readme-stats.vercel.app/api?username=${login}&show_icons=true&theme=dark&locale=en&count_private=true&border_radius=15&include_all_commits=true`}
+          alt={`GitHub Stats: ${login}`}
+        />
+        <img
+          src={`https://github-readme-streak-stats.herokuapp.com/?user=${login}&theme=dark&border_radius=15`}
+          alt={`GitHub Streak: ${login}`}
+        />
+      </div>
     </>
   );
 };

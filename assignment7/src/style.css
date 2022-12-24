@@ -27,7 +27,6 @@ body {
   font-family: var(--body-font);
   font-size: 1.8rem;
   position: relative;
-  min-height: 100vh;
 }
 .app {
   max-width: 1440px;
@@ -288,7 +287,11 @@ header {
   padding: 0.5rem 3rem;
   font-weight: 700;
 }
-
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 3rem auto;
+}
 /* footer */
 footer {
   width: 100%;

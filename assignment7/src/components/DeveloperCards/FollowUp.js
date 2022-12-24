@@ -23,8 +23,6 @@ const FollowUp = ({ url, closeModal }) => {
     </div>
   ));
 
-  console.log(fellows);
-
   return (
     <div className="follows_container">
       <div className="follow_up">
