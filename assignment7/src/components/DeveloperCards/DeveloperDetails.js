@@ -82,12 +82,17 @@ const DeveloperDetails = () => {
       </div>
 
       {isFollowerClicked ? (
-        <FollowUp url={followers_url} closeModal={setIsFollowerClicked} />
+        <FollowUp
+          url={followers_url}
+          closeModal={setIsFollowerClicked}
+          header="Followers"
+        />
       ) : null}
       {isFollowingClicked ? (
         <FollowUp
           url={following_url.slice(0, -13)}
           closeModal={setIsFollowingClicked}
+          header="Following"
         />
       ) : null}
       {/* ///// */}

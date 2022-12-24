@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const FollowUp = ({ url, closeModal }) => {
+const FollowUp = ({ url, closeModal, header }) => {
   console.log(url, closeModal);
   const [follows, setFollows] = useState([]);
   useEffect(() => {
@@ -27,7 +27,7 @@ const FollowUp = ({ url, closeModal }) => {
     <div className="follows_container">
       <div className="follow_up">
         <div className="follow_up_header">
-          <h4>followers</h4>
+          <h4>{header}</h4>
           <div onClick={() => closeModal((state) => !state)} className="close">
             X
           </div>
